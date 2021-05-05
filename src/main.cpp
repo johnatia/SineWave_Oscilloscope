@@ -135,6 +135,9 @@ void SetBackGround(uint16_t color) {
       tft.drawFastVLine(x, 0, 240, color);
   }
  // Set_BackGroundText();
+  tft.drawFastVLine(185, 0, 240, RED);
+  tft.drawFastHLine(50, 120, 320, RED);
+  tft.drawRect(0 , 0 , 320 , 240 , MAGENTA);
 }
 
 
