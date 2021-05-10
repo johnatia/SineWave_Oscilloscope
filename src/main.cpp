@@ -11,7 +11,7 @@
 #include <SPFD5408_Adafruit_TFTLCD.h> // Hardware-specific library
 // #include <SPFD5408_TouchScreen.h>
 #include <SPI.h>
-#include <SD.h>
+// #include <SD.h>
 
 
 uint8_t sin_table[100]=
@@ -64,9 +64,9 @@ Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 // a simpler declaration can optionally be used:
 // TftSpfd5408 tft;
 
-void DrawSineWave(int x , int y , uint16_t Color)
+void DrawSineWave(uint16_t x , uint16_t y , uint16_t Color)
 {
-  int SineX = 0;
+  uint16_t SineX = 0;
   for(int counter = x; counter < 320; counter++)
   {
     tft.drawPixel(counter , sin_table[SineX++]+y  , Color);
@@ -75,10 +75,50 @@ void DrawSineWave(int x , int y , uint16_t Color)
       SineX = 0;
     }
     
-    delay(10);
+  //  delay(10);
   }
   
 }
+uint16_t * SampleSignal(void)
+{
+  static uint16_t Voltage[2700] = {0};
+  for(int counter = 0; counter< 2700; counter++)
+  { 
+      Voltage[counter] = analogRead(A8);
+      delay(1);
+  }
+  return Voltage;
+}
+uint16_t j = 0;
+
+void DrawSignal(uint16_t x1, uint16_t  y1, uint16_t x2, uint16_t  y2, uint16_t Color)
+{
+  static uint16_t Amplitude[2] = {y1};
+  static uint16_t X_SCALE = 1 , Y_SCALE = 1;  
+    uint16_t * ptr = SampleSignal();
+  for(int counter = x1; counter < x2-1; counter++)
+  {
+     Amplitude[1] =  map(ptr[(counter-x1)*X_SCALE] , 0 , 4095 , y1 , y2);
+     tft.drawLine(counter, Amplitude[0], counter+1, Amplitude[1], Color );
+     Amplitude[0] = Amplitude[1];
+    //X_SCALE = (uint32_t)map( analogRead(A9) , 0 , 4095 , 1 , 1000000);
+    // Serial.println("Enetr Scale");
+    if(Serial.available() > 0)
+    {
+     j =  Serial.parseInt();
+     if( j > 0)
+     {
+       X_SCALE = j;
+     }
+    }
+    //X_SCALE = (uint16_t)map( analogRead(A8) , 1 , 100 , y1 , y2);
+    // Amplitude[1] = (uint16_t)map( analogRead(A8) , 0 , 4095 , y1 , y2);
+    //  tft.drawLine(counter, Amplitude[0], counter+1, Amplitude[1], Color );
+    // Amplitude[0] = Amplitude[1];
+    //delay(5);
+  }
+}
+
 
 void Set_BackGroundText(void)
 {
@@ -124,11 +164,10 @@ void SetBackGround(uint16_t color) {
     if(y == divisionFactor)
     {
       divisionFactor += 60;
-       tft.drawFastHLine(0, y, 320, color);
-
+      tft.drawFastHLine(0, y, 320, color);
     }
     else 
-    tft.drawFastHLine(50, y, 320, color);
+      tft.drawFastHLine(50, y, 320, color);
   }
   for(uint16_t x=50; x<320; x+=10) 
   {
@@ -152,14 +191,13 @@ void SetBackGround2(uint16_t color) {
     {
       divisionFactor += 60;
        tft.drawFastHLine(0, y, 320, color);
-
     }
     else 
     tft.drawFastHLine(50, y, 320, color);
   }
   for(uint16_t x=50; x<320; x+=10) 
   {
-      tft.drawFastVLine(x, 0, 240, color);
+    tft.drawFastVLine(x, 0, 240, color);
   }
 
 
@@ -168,9 +206,13 @@ void SetBackGround2(uint16_t color) {
   tft.drawRect(0 , 0 , 320 , 240 , MAGENTA);
 }
 
+
+
 void setup(void) {
   Serial.begin(9600);
   Serial.println(F("TFT LCD test"));
+  analogReadResolution(12);  
+
   tft.reset();
   uint16_t id;
   id = tft.readID();
@@ -185,12 +227,23 @@ void setup(void) {
   
   SetBackGround(BLUE);
   Set_BackGroundText();
+
 }
 
 
 void loop(void) {
-
-  SetBackGround(BLUE);
-  DrawSineWave( 50  , 60 , YELLOW);
+  /**
+   * Arduino DUE (write8 as Function) takes 134.198 ms to set BackGround
+   * Arduino DUE (write8 as Macro) takes 142.44 ms to set BackGround
+   * Arduino DUE (write8 as Function without PIO_SET and CLR) takes 71.695 ms to set BackGround
+   * Arduino DUE (write8 as Macros without PIO_SET and CLR) takes 78.163 ms to set BackGround
+   * Arduino DUE (write8 with bitwise) takes 64.961 ms to set BackGround
+   * Arduino DUE test1,2,3 takes 64.957 ms to set BackGround
+   * Arduino UNO takes 253.532 ms to set BackGround
+   */
+ 
+ // DrawSineWave( 50  , 60 , YELLOW);
+  DrawSignal( 50 , 120 , 319 ,  60, YELLOW);
+  delay(10);
  
 }
