@@ -1,3 +1,4 @@
+
 // IMPORTANT: Adafruit_TFTLCD LIBRARY MUST BE SPECIFICALLY
 // CONFIGURED FOR EITHER THE TFT SHIELD OR THE BREAKOUT BOARD.
 // SEE RELEVANT COMMENTS IN Adafruit_TFTLCD.h FOR SETUP.
@@ -178,7 +179,6 @@ void SetBackGround(uint16_t color) {
   tft.drawFastHLine(50, 120, 320, RED);
   tft.drawRect(0 , 0 , 320 , 240 , MAGENTA);
 }
-
 
 void SetBackGround2(uint16_t color) {
  uint16_t divisionFactor = 60;

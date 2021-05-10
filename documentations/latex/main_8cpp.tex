@@ -1,0 +1,331 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$SPFD5408\+\_\+\+Adafruit\+\_\+\+GFX.\+h$>$}\newline
+{\ttfamily \#include $<$SPFD5408\+\_\+\+Adafruit\+\_\+\+TFTLCD.\+h$>$}\newline
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a71d24cab0e16b054de228f29139f1b79}{LCD\+\_\+\+CS}}~A3
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a7db11f262864923bfb723ad406be4b8a}{LCD\+\_\+\+CD}}~A2
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aa42f66348683dcb7e65b3bd777a107cc}{LCD\+\_\+\+WR}}~A1
+\item 
+\#define \mbox{\hyperlink{main_8cpp_afae7b497cd5f777731b926de58474e4c}{LCD\+\_\+\+RD}}~A0
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a597d93b1f461dfdcdc2a6110bcf83b43}{LCD\+\_\+\+RESET}}~A4
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~0x0000
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~0x001F
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}~0x\+F800
+\item 
+\#define \mbox{\hyperlink{main_8cpp_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~0x07\+E0
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}{CYAN}}~0x07\+FF
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a6f699060902f800f12aaae150f3a708e}{MAGENTA}}~0x\+F81F
+\item 
+\#define \mbox{\hyperlink{main_8cpp_abf681265909adf3d3e8116c93c0ba179}{YELLOW}}~0x\+FFE0
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~0x\+FFFF
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Adafruit\+\_\+\+TFTLCD \mbox{\hyperlink{main_8cpp_acc69aec314a8e14b1847a39c96eb6834}{tft}} (\mbox{\hyperlink{main_8cpp_a71d24cab0e16b054de228f29139f1b79}{LCD\+\_\+\+CS}}, \mbox{\hyperlink{main_8cpp_a7db11f262864923bfb723ad406be4b8a}{LCD\+\_\+\+CD}}, \mbox{\hyperlink{main_8cpp_aa42f66348683dcb7e65b3bd777a107cc}{LCD\+\_\+\+WR}}, \mbox{\hyperlink{main_8cpp_afae7b497cd5f777731b926de58474e4c}{LCD\+\_\+\+RD}}, \mbox{\hyperlink{main_8cpp_a597d93b1f461dfdcdc2a6110bcf83b43}{LCD\+\_\+\+RESET}})
+\item 
+void \mbox{\hyperlink{main_8cpp_ab49721c1e1f6766688fb0fb0981ad5cc}{Draw\+Sine\+Wave}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t Color)
+\item 
+uint16\+\_\+t $\ast$ \mbox{\hyperlink{main_8cpp_a4fdf3ffbda13c0af08def59daef45de0}{Sample\+Signal}} (void)
+\item 
+void \mbox{\hyperlink{main_8cpp_abf9c4a16fe70e70520f52e566e914a5b}{Draw\+Signal}} (uint16\+\_\+t x1, uint16\+\_\+t y1, uint16\+\_\+t x2, uint16\+\_\+t y2, uint16\+\_\+t Color)
+\item 
+void \mbox{\hyperlink{main_8cpp_aeb248bb5b6622e50893602140e2b522d}{Set\+\_\+\+Back\+Ground\+Text}} (void)
+\item 
+void \mbox{\hyperlink{main_8cpp_a930e030ccc8da7f3be6eb94e659df986}{Set\+Back\+Ground}} (uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{main_8cpp_a4ec0d89a8ba4f8acf4be9a0accfa1f16}{Set\+Back\+Ground2}} (uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f}{setup}} (void)
+\item 
+void \mbox{\hyperlink{main_8cpp_a0b33edabd7f1c4e4a0bf32c67269be2f}{loop}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a641a7b0b6d2f22eb57a6a5ca80a3da9d}{sin\+\_\+table}} \mbox{[}100\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8cpp_a538d097420e725c4dad63c3caa9e55bd}{j}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_a7b3b25cba33b07c303f3060fe41887f6}\label{main_8cpp_a7b3b25cba33b07c303f3060fe41887f6}} 
+\index{main.cpp@{main.cpp}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily \#define BLACK~0x0000}
+
+
+
+Definition at line 54 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}\label{main_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}} 
+\index{main.cpp@{main.cpp}!BLUE@{BLUE}}
+\index{BLUE@{BLUE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
+{\footnotesize\ttfamily \#define BLUE~0x001F}
+
+
+
+Definition at line 55 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}\label{main_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}} 
+\index{main.cpp@{main.cpp}!CYAN@{CYAN}}
+\index{CYAN@{CYAN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CYAN}{CYAN}}
+{\footnotesize\ttfamily \#define CYAN~0x07\+FF}
+
+
+
+Definition at line 58 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_acfbc006ea433ad708fdee3e82996e721}\label{main_8cpp_acfbc006ea433ad708fdee3e82996e721}} 
+\index{main.cpp@{main.cpp}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \#define GREEN~0x07\+E0}
+
+
+
+Definition at line 57 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a7db11f262864923bfb723ad406be4b8a}\label{main_8cpp_a7db11f262864923bfb723ad406be4b8a}} 
+\index{main.cpp@{main.cpp}!LCD\_CD@{LCD\_CD}}
+\index{LCD\_CD@{LCD\_CD}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LCD\_CD}{LCD\_CD}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+CD~A2}
+
+
+
+Definition at line 34 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a71d24cab0e16b054de228f29139f1b79}\label{main_8cpp_a71d24cab0e16b054de228f29139f1b79}} 
+\index{main.cpp@{main.cpp}!LCD\_CS@{LCD\_CS}}
+\index{LCD\_CS@{LCD\_CS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LCD\_CS}{LCD\_CS}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+CS~A3}
+
+
+
+Definition at line 33 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_afae7b497cd5f777731b926de58474e4c}\label{main_8cpp_afae7b497cd5f777731b926de58474e4c}} 
+\index{main.cpp@{main.cpp}!LCD\_RD@{LCD\_RD}}
+\index{LCD\_RD@{LCD\_RD}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LCD\_RD}{LCD\_RD}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+RD~A0}
+
+
+
+Definition at line 36 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a597d93b1f461dfdcdc2a6110bcf83b43}\label{main_8cpp_a597d93b1f461dfdcdc2a6110bcf83b43}} 
+\index{main.cpp@{main.cpp}!LCD\_RESET@{LCD\_RESET}}
+\index{LCD\_RESET@{LCD\_RESET}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LCD\_RESET}{LCD\_RESET}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+RESET~A4}
+
+
+
+Definition at line 38 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_aa42f66348683dcb7e65b3bd777a107cc}\label{main_8cpp_aa42f66348683dcb7e65b3bd777a107cc}} 
+\index{main.cpp@{main.cpp}!LCD\_WR@{LCD\_WR}}
+\index{LCD\_WR@{LCD\_WR}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LCD\_WR}{LCD\_WR}}
+{\footnotesize\ttfamily \#define LCD\+\_\+\+WR~A1}
+
+
+
+Definition at line 35 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a6f699060902f800f12aaae150f3a708e}\label{main_8cpp_a6f699060902f800f12aaae150f3a708e}} 
+\index{main.cpp@{main.cpp}!MAGENTA@{MAGENTA}}
+\index{MAGENTA@{MAGENTA}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MAGENTA}{MAGENTA}}
+{\footnotesize\ttfamily \#define MAGENTA~0x\+F81F}
+
+
+
+Definition at line 59 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}\label{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{main.cpp@{main.cpp}!RED@{RED}}
+\index{RED@{RED}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define RED~0x\+F800}
+
+
+
+Definition at line 56 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a87b537f5fa5c109d3c05c13d6b18f382}\label{main_8cpp_a87b537f5fa5c109d3c05c13d6b18f382}} 
+\index{main.cpp@{main.cpp}!WHITE@{WHITE}}
+\index{WHITE@{WHITE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WHITE}{WHITE}}
+{\footnotesize\ttfamily \#define WHITE~0x\+FFFF}
+
+
+
+Definition at line 61 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_abf681265909adf3d3e8116c93c0ba179}\label{main_8cpp_abf681265909adf3d3e8116c93c0ba179}} 
+\index{main.cpp@{main.cpp}!YELLOW@{YELLOW}}
+\index{YELLOW@{YELLOW}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{YELLOW}{YELLOW}}
+{\footnotesize\ttfamily \#define YELLOW~0x\+FFE0}
+
+
+
+Definition at line 60 of file main.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_abf9c4a16fe70e70520f52e566e914a5b}\label{main_8cpp_abf9c4a16fe70e70520f52e566e914a5b}} 
+\index{main.cpp@{main.cpp}!DrawSignal@{DrawSignal}}
+\index{DrawSignal@{DrawSignal}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DrawSignal()}{DrawSignal()}}
+{\footnotesize\ttfamily void Draw\+Signal (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x1,  }\item[{uint16\+\_\+t}]{y1,  }\item[{uint16\+\_\+t}]{x2,  }\item[{uint16\+\_\+t}]{y2,  }\item[{uint16\+\_\+t}]{Color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ab49721c1e1f6766688fb0fb0981ad5cc}\label{main_8cpp_ab49721c1e1f6766688fb0fb0981ad5cc}} 
+\index{main.cpp@{main.cpp}!DrawSineWave@{DrawSineWave}}
+\index{DrawSineWave@{DrawSineWave}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DrawSineWave()}{DrawSineWave()}}
+{\footnotesize\ttfamily void Draw\+Sine\+Wave (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{Color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a0b33edabd7f1c4e4a0bf32c67269be2f}\label{main_8cpp_a0b33edabd7f1c4e4a0bf32c67269be2f}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Arduino DUE (write8 as Function) takes 134.\+198 ms to set Back\+Ground Arduino DUE (write8 as Macro) takes 142.\+44 ms to set Back\+Ground Arduino DUE (write8 as Function without PIO\+\_\+\+SET and CLR) takes 71.\+695 ms to set Back\+Ground Arduino DUE (write8 as Macros without PIO\+\_\+\+SET and CLR) takes 78.\+163 ms to set Back\+Ground Arduino DUE (write8 with bitwise) takes 64.\+961 ms to set Back\+Ground Arduino DUE test1,2,3 takes 64.\+957 ms to set Back\+Ground Arduino UNO takes 253.\+532 ms to set Back\+Ground
+
+Definition at line 234 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a4fdf3ffbda13c0af08def59daef45de0}\label{main_8cpp_a4fdf3ffbda13c0af08def59daef45de0}} 
+\index{main.cpp@{main.cpp}!SampleSignal@{SampleSignal}}
+\index{SampleSignal@{SampleSignal}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SampleSignal()}{SampleSignal()}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ Sample\+Signal (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_aeb248bb5b6622e50893602140e2b522d}\label{main_8cpp_aeb248bb5b6622e50893602140e2b522d}} 
+\index{main.cpp@{main.cpp}!Set\_BackGroundText@{Set\_BackGroundText}}
+\index{Set\_BackGroundText@{Set\_BackGroundText}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Set\_BackGroundText()}{Set\_BackGroundText()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Back\+Ground\+Text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a930e030ccc8da7f3be6eb94e659df986}\label{main_8cpp_a930e030ccc8da7f3be6eb94e659df986}} 
+\index{main.cpp@{main.cpp}!SetBackGround@{SetBackGround}}
+\index{SetBackGround@{SetBackGround}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SetBackGround()}{SetBackGround()}}
+{\footnotesize\ttfamily void Set\+Back\+Ground (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a4ec0d89a8ba4f8acf4be9a0accfa1f16}\label{main_8cpp_a4ec0d89a8ba4f8acf4be9a0accfa1f16}} 
+\index{main.cpp@{main.cpp}!SetBackGround2@{SetBackGround2}}
+\index{SetBackGround2@{SetBackGround2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SetBackGround2()}{SetBackGround2()}}
+{\footnotesize\ttfamily void Set\+Back\+Ground2 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Definition at line 183 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f}\label{main_8cpp_a7dfd9b79bc5a37d7df40207afbc5431f}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 211 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_acc69aec314a8e14b1847a39c96eb6834}\label{main_8cpp_acc69aec314a8e14b1847a39c96eb6834}} 
+\index{main.cpp@{main.cpp}!tft@{tft}}
+\index{tft@{tft}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tft()}{tft()}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+TFTLCD tft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8cpp_a71d24cab0e16b054de228f29139f1b79}{LCD\+\_\+\+CS}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_a7db11f262864923bfb723ad406be4b8a}{LCD\+\_\+\+CD}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_aa42f66348683dcb7e65b3bd777a107cc}{LCD\+\_\+\+WR}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_afae7b497cd5f777731b926de58474e4c}{LCD\+\_\+\+RD}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_a597d93b1f461dfdcdc2a6110bcf83b43}{LCD\+\_\+\+RESET}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a538d097420e725c4dad63c3caa9e55bd}\label{main_8cpp_a538d097420e725c4dad63c3caa9e55bd}} 
+\index{main.cpp@{main.cpp}!j@{j}}
+\index{j@{j}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily uint16\+\_\+t j = 0}
+
+
+
+Definition at line 93 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a641a7b0b6d2f22eb57a6a5ca80a3da9d}\label{main_8cpp_a641a7b0b6d2f22eb57a6a5ca80a3da9d}} 
+\index{main.cpp@{main.cpp}!sin\_table@{sin\_table}}
+\index{sin\_table@{sin\_table}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sin\_table}{sin\_table}}
+{\footnotesize\ttfamily uint8\+\_\+t sin\+\_\+table\mbox{[}100\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{0x32,0x35,0x38,0x3b,0x3e,0x41,0x44,0x47,0x4a,0x4d,0x4f,0x52,0x54,0x56,0x59,0x5a,0x5c,0x5e,0x5f,0x60,}
+\DoxyCodeLine{0x62,0x62,0x63,0x64,0x64,0x64,0x64,0x64,0x63,0x62,0x62,0x60,0x5f,0x5e,0x5c,0x5a,0x59,0x56,0x54,0x52,}
+\DoxyCodeLine{0x4f,0x4d,0x4a,0x47,0x44,0x41,0x3e,0x3b,0x38,0x35,0x32,0x2f,0x2c,0x29,0x26,0x23,0x20,0x1d,0x1a,0x17,}
+\DoxyCodeLine{0x15,0x12,0x10,0xe,0xb,0xa,0x8,0x6,0x5,0x4,0x2,0x2,0x1,0x0,0x0,0x0,0x0,0x0,0x1,0x2,}
+\DoxyCodeLine{0x2,0x4,0x5,0x6,0x8,0xa,0xb,0xe,0x10,0x12,0x15,0x17,0x1a,0x1d,0x20,0x23,0x26,0x29,0x2c,0x2f}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 18 of file main.\+cpp.
+
